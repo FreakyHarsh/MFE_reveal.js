@@ -1,5 +1,5 @@
-.block, .container__parentblock {
-  width: 300px;
+.block, .container__parentblock, .container__childrens .child1, .container__childrens .child2, .container__childrens .child3 {
+  width: 200px;
   height: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -11,10 +11,10 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  font-size: 70%;
 }
 
 .container {
-  background-color: red;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -24,5 +24,74 @@
 }
 
 .container__parentblock {
-  background-color: pink;
+  background-color: #788896;
+}
+
+.container__childrens {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container__childrens .subheading {
+  margin-top: 5px;
+  font-size: 60%;
+}
+
+.container__childrens .child1 {
+  background-color: #2c88d9;
+}
+
+.container__childrens .child2 {
+  background-color: #d3455b;
+}
+
+.container__childrens .child3 {
+  background-color: #1aae9f;
+}
+
+.branchMain {
+  width: 2px;
+  height: 70px;
+  background: #788896;
+  margin: 0 auto;
+}
+
+.branchBase {
+  height: 2px;
+  background-color: #788896;
+}
+
+.branchBase__left {
+  width: 50%;
+}
+
+.branchBase__right {
+  width: 50%;
+}
+
+.branchChild {
+  width: 100%;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  margin-left: 0 !important;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.branchChild li {
+  list-style-type: none;
+  display: block !important;
+  width: 2px;
+  height: 70px;
+  background-color: #788896;
+}
+
+.branchChild li::after {
+  content: "";
 }

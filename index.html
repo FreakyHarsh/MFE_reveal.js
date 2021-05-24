@@ -17,7 +17,7 @@
   <body>
     <div class="reveal">
       <div class="slides">
-        <section>
+        <section data-transition="fade-out">
           <h3 class="r-fit-text">What is the Problem?</h3>
           <p class="r-fit-text">
             For most projects, the frontend world remains largely monolithic. Just as with the backend before micro-services, this means that it’s hard to scale
@@ -25,17 +25,71 @@
             solutions.
           </p>
         </section>
-        <section>
+
+        <!--SECTION: MICROFRONTEND BASIC FLOWCHART  -->
+        <section data-transition="zoom">
           <section data-auto-animate style="height: 600px">
-            <div data-id="1" class="container">
-              <div class="container__parentblock">Container</div>
+            <div data-id="container" class="container">
+              <div class="container__parentblock" style="background-color: #2c88d9; width: 50px; height: 50px; border-radius: 50%; margin-top: 30px"></div>
             </div>
           </section>
+
+          <section data-auto-animate style="height: 600px" data-transition="fade-out">
+            <div data-id="container" class="container" style="margin-top: 100px">
+              <div class="container__parentblock" style="background-color: #2c88d9">SPA</div>
+            </div>
+            <div class="child1" data-id="remote1" style="margin: 20px auto; width: 50%; font-size: 40%">Standalone React Application</div>
+          </section>
+
           <section data-auto-animate style="height: 600px">
-            <div data-id="1">2</div>
+            <div data-id="container" class="container">
+              <div class="container__parentblock">Container</div>
+            </div>
+            <div class="branchMain" data-id="branchMain"></div>
+            <div class="container__childrens" style="justify-content: center">
+              <div class="child1" data-id="remote1">
+                <div>React</div>
+                <div class="subheading">(SubApp 1)</div>
+              </div>
+            </div>
+          </section>
+
+          <section data-auto-animate style="height: 600px">
+            <div data-id="container" class="container">
+              <div class="container__parentblock">Container</div>
+            </div>
+            <div class="branchMain" data-id="branchMain"></div>
+            <div style="width: 80%; margin: 0 auto">
+              <div class="branchBase">
+                <div class="branchBase__left"></div>
+                <div class="branchBase__right"></div>
+              </div>
+              <ul class="branchChild">
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+            </div>
+            <div class="container__childrens">
+              <div class="child1" data-id="remote1">
+                <div>React</div>
+                <div class="subheading">(Remote 1)</div>
+              </div>
+              <div class="child2">
+                <div>Angular</div>
+                <div class="subheading">(Remote 2)</div>
+              </div>
+              <div class="child3">
+                <div>Vue</div>
+                <div class="subheading">(Remote 3)</div>
+              </div>
+            </div>
           </section>
         </section>
-        <section>Slide 3</section>
+
+        <section>
+          
+        </section>
       </div>
     </div>
 
