@@ -14,10 +14,17 @@
     <!-- Theme used for syntax highlighted code -->
     <link rel="stylesheet" href="plugin/highlight/monokai.css" />
   </head>
+
   <body>
     <div class="reveal">
       <div class="slides">
-        <section data-transition="fade-out">
+        <!-- Slide 1 -->
+        <section data-transition="zoom-out">
+          <h1 class="r-fit-text">Introduction to <span style="color: #00bbff; background-color: white; padding: 0 10px">Micro-Frontends</span></h1>
+        </section>
+
+        <!-- Slide 2 -->
+        <section data-transition="fade-up fade-out">
           <h3 class="r-fit-text">What is the Problem?</h3>
           <p class="r-fit-text">
             For most projects, the frontend world remains largely monolithic. Just as with the backend before micro-services, this means that it’s hard to scale
@@ -26,21 +33,45 @@
           </p>
         </section>
 
-        <!--SECTION: MICROFRONTEND BASIC FLOWCHART  -->
+        <!-- Slide 3 -->
+        <section data-transition="slide">
+          <section>
+            <h3 class="r-fit-text">What is Monolithic Application?</h3>
+          </section>
+          <section data-background="./examples/assets/gothic.jpeg">
+            <p class="fragment" data-transition="zoom">LOL, My bad. That's Gothic not Monolithic</p>
+          </section>
+          <section>
+            <blockquote class="r-fit-text" style="padding: 1rem; border-radius: 10px">
+              <h2 style="margin-bottom: 5px">What is Monolithic?</h2>
+              In software engineering, a monolithic application describes a single-tiered software application in which the user interface and data access code
+              are combined into a single program from a single platform"
+            </blockquote>
+          </section>
+          <section>
+            <h3 class="r-fit-text">Issues with Monolithic Application</h3>
+            <ul>
+              <li>Harder to scale</li>
+              <li>Developers are all bound to the same code base</li>
+              <li>All are forced to crowd in the same build pipeline</li>
+              <li>Make Developers cry 😭</li>
+            </ul>
+          </section>
+        </section>
+
+        <!--Slide 4: MICROFRONTEND BASIC FLOWCHART  -->
         <section data-transition="zoom">
           <section data-auto-animate style="height: 600px">
             <div data-id="container" class="container">
               <div class="container__parentblock" style="background-color: #2c88d9; width: 50px; height: 50px; border-radius: 50%; margin-top: 30px"></div>
             </div>
           </section>
-
-          <section data-auto-animate style="height: 600px" data-transition="fade-out">
+          <section data-auto-animate style="height: 600px">
             <div data-id="container" class="container" style="margin-top: 100px">
               <div class="container__parentblock" style="background-color: #2c88d9">SPA</div>
             </div>
-            <div class="child1" data-id="remote1" style="margin: 20px auto; width: 50%; font-size: 40%">Standalone React Application</div>
+            <div class="child1" data-id="remote1" style="margin: 20px auto; width: 50%; font-size: 40%">Monolithic React Application</div>
           </section>
-
           <section data-auto-animate style="height: 600px">
             <div data-id="container" class="container">
               <div class="container__parentblock">Container</div>
@@ -53,7 +84,6 @@
               </div>
             </div>
           </section>
-
           <section data-auto-animate style="height: 600px">
             <div data-id="container" class="container">
               <div class="container__parentblock">Container</div>
@@ -87,8 +117,82 @@
           </section>
         </section>
 
+        <!-- Slide 5 -->
+        <section data-transition="zoom">
+          <section data-auto-animate class="smallPara">
+            <h2 class="r-fit-text">Major Categories of Integration</h2>
+            <h3 data-id="category">1. Build Time Integration</h3>
+            <p data-id="category__detail">
+              This is what most of the code implemented today. The container will install the components as libraries, similar to the libraries you install from
+              npm.
+            </p>
+            <p class="fragment pro">Easy to implement</p>
+            <p class="fragment con">Hard to use different technologies</p>
+            <p class="fragment con">Size of final package will be big because it contains all the dependencies</p>
+            <p class="fragment con">You have to deploy again for any changes in dependencies</p>
+            <p class="fragment con">Tight coupling between container and all Micro-Frontends</p>
+            <p class="fragment con">Redundancy of common dependency</p>
+          </section>
+          <section data-auto-animate class="smallPara">
+            <h2 class="r-fit-text">Major Categories of Integration</h2>
+            <h3 data-id="category">2. Run Time Integration</h3>
+            <p data-id="category__detail">
+              Instead of installing Sub-Apps as npm dependency. We host the subApps file code that would be fetched during run time by the main application.
+            </p>
+            <p class="fragment pro">Build time & size decreases drastically</p>
+            <p class="fragment pro">Remote can be deployed independently at any time</p>
+            <p class="fragment pro">Common dependency can be shared</p>
+            <p class="fragment con">Complex setup & integration</p>
+          </section>
+          <section data-auto-animate class="smallPara">
+            <h2 class="r-fit-text">Major Categories of Integration</h2>
+            <h3 data-id="category">3. iFrames Integration</h3>
+            <p data-id="category__detail">iFrames are the HTML documents that can be embedded inside another HTML document</p>
+            <p class="fragment pro">Easy to implement</p>
+            <p class="fragment con">Makes for a poor developer and user experience</p>
+            <p class="fragment con">It’s difficult to build integrations like routing, history, and deep-linking between different parts of the application</p>
+          </section>
+          <section data-auto-animate class="smallPara">
+            <h2 class="r-fit-text">Major Categories of Integration</h2>
+            <h3 data-id="category">3. iFrames Integration</h3>
+            <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers="|3-5|6-8|"><script type="text/template">
+              <html>
+                <body>
+                  <iframe src="http://localhost:8081" width="200" height="200">
+                    <p>Your browser does not support iframes</p>
+                  </iframe>
+                  <iframe src="http://localhost:8082" width="300" height="400">
+                    <p>Your browser does not support iframes</p>
+                  </iframe>
+                </body>
+              </html>
+            </script></code></pre>
+          </section>
+          <section data-auto-animate class="smallPara">
+            <h2 class="r-fit-text">Major Categories of Integration</h2>
+            <h3 data-id="category">4. Server Integration</h3>
+            <p data-id="category__detail">
+              In this approach, micro frontends are cached at CDN and composed in a view, then served to the client runtime or at build time. The server
+              composes the view, retrieves micro frontends, and assembles the final page it serves
+            </p>
+            <p class="fragment pro">Better SEO results</p>
+            <p class="fragment con">Complex to integrate</p>
+          </section>
+          <section data-background="./examples/assets/dead.gif" data-background-size="50%"></section>
+          <section data-background="http://i.giphy.com/90F8aUepslB84.gif" data-background-opacity="0.7">
+            <h1 style="color: #00bbff">Let's have a DEMO</h1>
+          </section>
+        </section>
+
         <section>
-          
+          <section>
+            <h1 class="r-fit-text">Thank <span style="color: #00bbff">You</span></h1>
+          </section>
+          <section data-background="./examples/assets/celebrate.gif" data-background-size="60%"></section>
+        </section>
+
+        <section data-background="./examples/assets/anyquestions.gif">
+          <h1>Any <span style="color: #00bbff">Questions</span>?</h1>
         </section>
       </div>
     </div>
@@ -103,10 +207,10 @@
       // - https://revealjs.com/config/
       Reveal.initialize({
         hash: true,
-
         // Learn about plugins: https://revealjs.com/plugins/
         plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
       });
+      Reveal.configure({ backgroundTransition: "zoom" });
     </script>
   </body>
 </html>
