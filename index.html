@@ -147,7 +147,11 @@
           <section data-auto-animate class="smallPara">
             <h2 class="r-fit-text">Major Categories of Integration</h2>
             <h3 data-id="category">3. iFrames Integration</h3>
-            <p data-id="category__detail">iFrames are the HTML documents that can be embedded inside another HTML document</p>
+            <p data-id="category__detail">
+              iFrames are the HTML documents that can be embedded inside another HTML document.
+              <span class="fragment fade-in-then-out">Click next to see an example of iFrame</span>
+            </p>
+            <iframe src="https://portfolio-5c8a2.web.app/" title="Harsh portfolio website" class="fragment fade-in-then-out iframeDemo"></iframe>
             <p class="fragment pro">Easy to implement</p>
             <p class="fragment con">Makes for a poor developer and user experience</p>
             <p class="fragment con">It’s difficult to build integrations like routing, history, and deep-linking between different parts of the application</p>
@@ -158,10 +162,10 @@
             <pre data-id="code-animation" style="font-size: 80%"><code class="hljs" data-trim data-line-numbers="|3-5|6-8|"><script type="text/template">
               <html>
                 <body>
-                  <iframe src="http://localhost:8081" width="200" height="200">
+                  <iframe src="https://harshboricha.com" width="300" height="400">
                     <p>Your browser does not support iframes</p>
                   </iframe>
-                  <iframe src="http://localhost:8082" width="300" height="400">
+                  <iframe src="http://localhost:8081" width="200" height="200">
                     <p>Your browser does not support iframes</p>
                   </iframe>
                 </body>
