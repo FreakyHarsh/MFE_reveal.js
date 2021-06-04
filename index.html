@@ -121,16 +121,33 @@
         <section data-transition="zoom">
           <section data-auto-animate class="smallPara">
             <h2 class="r-fit-text">Major Categories of Integration</h2>
+            <ul>
+              <li>
+                <h3>Build Time Integration</h3>
+              </li>
+              <li>
+                <h3>iFrame Integration</h3>
+              </li>
+              <li>
+                <h3>Server Side Integration</h3>
+              </li>
+              <li>
+                <h3>Run time Integration</h3>
+              </li>
+            </ul>
+          </section>
+          <section data-auto-animate class="smallPara">
+            <h2 class="r-fit-text">Major Categories of Integration</h2>
             <h3 data-id="category">1. Build Time Integration</h3>
             <p data-id="category__detail">
               This is what most of the code implemented today. The container will install the components as libraries, similar to the libraries you install from
               npm.
             </p>
             <p class="fragment pro">Easy to implement</p>
-            <p class="fragment con">Hard to use different technologies</p>
             <p class="fragment con">Size of final package will be big because it contains all the dependencies</p>
-            <p class="fragment con">You have to deploy again for any changes in dependencies</p>
             <p class="fragment con">Tight coupling between container and all Micro-Frontends</p>
+            <p class="fragment con">You have to deploy again for any changes in dependencies</p>
+            <p class="fragment con">Hard to use different technologies</p>
             <p class="fragment con">Redundancy of common dependency</p>
           </section>
           <section data-auto-animate class="smallPara">
@@ -163,7 +180,7 @@
           </section>
           <section data-auto-animate class="smallPara">
             <h2 class="r-fit-text">Major Categories of Integration</h2>
-            <h3 data-id="category">4. Server Integration</h3>
+            <h3 data-id="category">3. Server Side Integration</h3>
             <p data-id="category__detail">
               In this approach, micro frontends are cached at CDN and composed in a view, then served to the client runtime or at build time. The server
               composes the view, retrieves micro frontends, and assembles the final page it serves
